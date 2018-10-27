@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+const { postRegister } = require('../controllers/index');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.send('Get Home');
+  res.render('index', { title: "Vizishop || Home"});
 });
 
 /* GET Regsiter. */
@@ -12,9 +13,7 @@ router.get('/register', (req, res, next) => {
 });
 
 /* POST Register. */
-router.post('/register', (req, res, next) => {
-  res.send('Post Register');
-});
+router.post('/register', postRegister);
 
 /* GET Login. */
 router.get('/login', (req, res, next) => {
